@@ -1,3 +1,8 @@
+//need require dotenv kinda like a gitignore
+var dotenv = require('dotenv');
+// gotta load it in
+dotenv.load();
+
 // *** main dependencies *** //
 var express = require('express');
 var path = require('path');
@@ -10,6 +15,9 @@ var swig = require('swig');
 
 // *** routes *** //
 var routes = require('./routes/index.js');
+
+// need to ADD THIS
+var llamas = require('./routes/api.js');
 
 
 // *** express instance *** //
@@ -36,6 +44,9 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 
 // *** main routes *** //
 app.use('/', routes);
+
+//HAVE TO ADD THIS TOOOOOO
+app.use('/api', llamas);
 
 
 // catch 404 and forward to error handler

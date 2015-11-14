@@ -9,6 +9,6 @@ var Llama = new Schema ({
 });
 
 // hook up your database
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGO_URI);
 // one way to require the model
 module.exports = mongoose.model("Llamas", Llama);

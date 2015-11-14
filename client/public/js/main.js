@@ -28,7 +28,7 @@ function getLlamas() {
   $.get('/api/llamas', function (data) {
     for (var i = 0; i < data.length; i++) {
       $('#all-llamas').append(
-        '<tr><td>' + data[i].name + '</td><td>' + data[i].age + '</td><td>' + data[i].spitter + '</td></tr>'
+        '<tr><td>' + data[i].name + '</td><td>' + data[i].age + '</td><td>' + data[i].spitter + '</td></tr>' + '<td><a class="btn danger" id=""' + data[i]._id + '>Delete</a>'
       );
       $('form input').val('');
       $('#spitter').removeAttr('checked');
